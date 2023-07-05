@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+<style>
+body {
+  perspective: 800px;
+}
 
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s linear infinite;
+}
+
+.cube div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.front {
+  background-color: red;
+  transform: translateZ(100px);
+}
+
+.back {
+  background-color: orange;
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+  background-color: yellow;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  background-color: green;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  background-color: blue;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  background-color: purple;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotateCube {
+  from {transform: rotate3d(1,1,1,0deg);}
+  to {transform: rotate3d(1,1,1,360deg);}
+}
+</style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+<div class="cube">
+  <div class="front">Front</div>
+  <div class="back">Back</div>
+  <div class="right">Right</div>
+  <div class="left">Left</div>
+  <div class="top">Top</div>
+  <div class="bottom">Bottom</div>
+</div>
 
 </body>
-
 </html>
